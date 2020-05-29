@@ -1,6 +1,6 @@
 import React, { Fragment, useState, useEffect } from 'react';
 import { Container, Row } from 'react-bootstrap';
-import MainImage from './sections/MainImage';
+import ImageCarousel from './sections/ImageCarousel';
 import MovieCard from './sections/MovieCard';
 
 export const MainPage = () => {
@@ -23,7 +23,7 @@ export const MainPage = () => {
   return (
     <div>
       {movies[0] && (
-        <MainImage
+        <ImageCarousel
           title1={movies[0].title}
           text1={movies[0].overview}
           image1={`https://image.tmdb.org/t/p/w1280/${movies[0].backdrop_path && movies[0].backdrop_path}`}

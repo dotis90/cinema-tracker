@@ -1,7 +1,7 @@
 import React from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 
-export const MainImage = (props) => {
+export const ImageCarousel = (props) => {
   return (
     <Carousel>
       <Carousel.Item>
@@ -31,4 +31,4 @@ export const MainImage = (props) => {
   );
 };
 
-export default MainImage;
+export default ImageCarousel;

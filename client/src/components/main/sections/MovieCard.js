@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
 import { Col } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
@@ -11,7 +12,9 @@ export const MovieCard = (props) => {
         <Card.Body>
           <Card.Title>{props.title}</Card.Title>
           <Card.Text>{props.release}</Card.Text>
-          <Button variant="primary">See Movie</Button>
+          <Link to={`/movies/${props.movieId}`}>
+            <Button variant="primary">See Movie</Button>
+          </Link>
         </Card.Body>
       </Card>
     </Col>
