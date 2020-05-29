@@ -36,7 +36,7 @@ export const MainPage = () => {
         />
       )}
 
-      <h1>Popular Movies</h1>
+      <h1 style={{ textAlign: 'center' }}>Popular Movies</h1>
       <Container fluid>
         <Row>
           {movies &&
