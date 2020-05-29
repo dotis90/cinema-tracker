@@ -1,6 +1,6 @@
 import React, { Fragment, useState, useEffect } from 'react';
 import { Container, Row } from 'react-bootstrap';
-import ImageCarousel from './sections/ImageCarousel';
+import ImageCarousel from './sections/MainImage';
 import MovieCard from './sections/MovieCard';
 
 export const MainPage = () => {

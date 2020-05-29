@@ -1,4 +1,3 @@
-const express = require('express');
 const axios = require('axios');
 
 exports.getPopularMovies = (req, res) => {
@@ -15,19 +14,16 @@ exports.getPopularMovies = (req, res) => {
     });
 };
 
-// .then(({ data }) => {
-//     console.log(data.results);
-//     res.json({ data });
-//   })
-//   .catch((error) => {
-//     console.log(error);
-//   });
+exports.getSingleMovie = (req, res) => {
+  const movieId = req.query.data;
 
-// const fetchMovies = (path) => {
-//     fetch(path).then((res) =>
-//       res.json().then(({ data }) => {
-//         console.log(data);
-//         setMovies([...movies, ...data.results]);
-//       })
-//     );
-//   };
+  return axios
+    .get(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${process.env.MOVIE_API_KEY}&language=en-US`)
+    .then((response) => {
+      const results = response.data;
+      res.json(results);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+};
