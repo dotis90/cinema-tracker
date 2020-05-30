@@ -6,6 +6,7 @@ import Navibar from './components/layout/Navbar';
 import Landing from './components/layout/Landing';
 import Register from './components/auth/Register';
 import Login from './components/auth/Login';
+import AlertMessage from './components/layout/Alert';
 import MainPage from './components/main/MainPage';
 import MovieDetailPage from './components/MovieDetailPage/MovieDetailPage';
 
@@ -16,6 +17,7 @@ const App = () => {
         <Fragment>
           <Navibar />
           <Route exact path="/" component={Landing} />
+          <AlertMessage />
           <Switch>
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />
