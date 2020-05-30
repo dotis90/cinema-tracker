@@ -9,27 +9,12 @@ const ProfileSchema = new mongoose.Schema({
     type: String,
   },
   genres: {
-    type: String,
+    type: [String],
+    required: true,
   },
   bio: {
     type: String,
-  },
-  social: {
-    youtube: {
-      type: String,
-    },
-    twitter: {
-      type: String,
-    },
-    facebook: {
-      type: String,
-    },
-    linkedin: {
-      type: String,
-    },
-    instagram: {
-      type: String,
-    },
+    required: true,
   },
   date: {
     type: Date,
