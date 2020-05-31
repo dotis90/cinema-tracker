@@ -1,12 +1,14 @@
 const axios = require('axios');
 
 exports.getPopularMovies = (req, res) => {
+  let currentPage = req.query.data;
+
   return axios
     .get(
-      `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.MOVIE_API_KEY}&language=en-US&page=1`
+      `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.MOVIE_API_KEY}&language=en-US&page=${currentPage}`
     )
     .then((response) => {
-      const results = response.data.results;
+      const results = response.data;
       res.json(results);
     })
     .catch((error) => {

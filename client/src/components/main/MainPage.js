@@ -5,19 +5,26 @@ import MovieCard from './sections/MovieCard';
 
 export const MainPage = () => {
   const [movies, setMovies] = useState([]);
+  const [currentPage, setCurrentPage] = useState(0);
 
   useEffect(() => {
-    const endpoint = '/api/movies/popular';
+    const endpoint = `/api/movies/popular?data=${1}`;
     fetchMovies(endpoint);
   }, []);
 
   const fetchMovies = (path) => {
     fetch(path).then((res) =>
       res.json().then((res) => {
-        console.log(res);
-        setMovies([...movies, ...res]);
+        setMovies([...movies, ...res.results]);
+        setCurrentPage(res.page);
       })
     );
+  };
+
+  const handleClick = () => {
+    console.log(currentPage);
+    const endpoint = `/api/movies/popular?data=${currentPage + 1}`;
+    fetchMovies(endpoint);
   };
 
   return (
@@ -52,6 +59,9 @@ export const MainPage = () => {
             ))}
         </Row>
       </Container>
+      <div style={{ display: 'flex', justifyContent: 'center' }}>
+        <button onClick={handleClick}>Load More</button>
+      </div>
     </div>
   );
 };
