@@ -1,0 +1,9 @@
+.display-link {
+  color: white;
+  text-decoration: none;
+}
+
+.display-link:hover {
+  color: gray;
+  text-decoration: none;
+}

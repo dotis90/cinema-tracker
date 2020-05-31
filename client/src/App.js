@@ -11,6 +11,9 @@ import { findUser } from './actions/auth';
 import setAuthToken from './utils/setAuthToken';
 import MainPage from './components/main/MainPage';
 import MovieDetailPage from './components/MovieDetailPage/MovieDetailPage';
+import Dashboard from './components/dashboard/Dashboard';
+import PrivateRoute from './components/routing/PrivateRoute';
+import './App.css';
 
 if (localStorage.token) {
   setAuthToken(localStorage.token);
@@ -31,8 +34,9 @@ const App = () => {
           <Switch>
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />
-            <Route exact path="/main" component={MainPage} />
-            <Route exact path="/movies/:movieId" component={MovieDetailPage} />
+            <PrivateRoute exact path="/main" component={MainPage} />
+            <PrivateRoute exact path="/dashboard" component={Dashboard} />
+            <PrivateRoute exact path="/movies/:movieId" component={MovieDetailPage} />
           </Switch>
         </Fragment>
       </Router>

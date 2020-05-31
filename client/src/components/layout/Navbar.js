@@ -9,11 +9,11 @@ import { Link } from 'react-router-dom';
 export const Navibar = ({ auth: { isAuthenticated, loading }, logout }) => {
   const guestLinks = (
     <>
-      <Link to="/login" className="nav-link">
+      <Link to="/login" className="nav-link display-link">
         Login
       </Link>
       {''}
-      <Link to="/register" className="nav-link">
+      <Link to="/register" className="nav-link display-link">
         Sign Up
       </Link>
     </>
@@ -21,25 +21,30 @@ export const Navibar = ({ auth: { isAuthenticated, loading }, logout }) => {
 
   const authLinks = (
     <>
-      <Link to="#" className="nav-link">
+      <Link to="/community" className="nav-link display-link">
         Community
       </Link>
-      <Link href="/favorites" className="nav-link">
+      <Link to="/favorites" className="nav-link display-link">
         Favorites
       </Link>
-      <Link href="/profile" className="nav-link">
+      <Link to="/main" className="nav-link display-link">
         Movies
       </Link>
-      <Link onClick={logout} to="/" className="nav-link">
+      <Link to="/profile" className="nav-link display-link">
+        Profile
+      </Link>
+      <Link onClick={logout} to="/" className="nav-link display-link">
         Logout
       </Link>
     </>
   );
 
   return (
-    <Navbar expand="lg" bg="dark" variant="dark">
+    <Navbar className="color-nav" expand="lg" sticky="top" variant="dark">
       <Navbar.Brand>
-        <Link to="/">Cinema Tracker</Link>
+        <Link className="display-link" to="/">
+          Cinema Tracker
+        </Link>
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basiv-navbar-nav" className="justify-content-end">
