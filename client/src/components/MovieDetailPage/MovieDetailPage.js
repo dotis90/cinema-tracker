@@ -33,11 +33,16 @@ export const MovieDetailPage = (props) => {
       <Container fluid>
         <Row>
           {actors &&
-            actors.map((actor, index) => (
-              <Fragment key={index}>
-                <CastCard image={`https://image.tmdb.org/t/p/w500${actor.profile_path}`} name={actor.name} />
-              </Fragment>
-            ))}
+            actors
+              .filter((actor) => actor.profile_path)
+              .map((actor, index) => (
+                <Fragment key={index}>
+                  <CastCard
+                    image={`https://image.tmdb.org/t/p/w500${actor.profile_path}`}
+                    name={actor.name}
+                  />
+                </Fragment>
+              ))}
         </Row>
       </Container>
     </Fragment>
