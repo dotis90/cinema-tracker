@@ -9,6 +9,7 @@ export const CastCard = (props) => {
         <Card.Img variant="top" src={props.image} />
         <Card.Body>
           <Card.Title>{props.name}</Card.Title>
+          <Card.Text>{props.character}</Card.Text>
         </Card.Body>
       </Card>
     </Col>

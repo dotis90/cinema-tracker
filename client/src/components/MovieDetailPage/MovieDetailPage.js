@@ -2,6 +2,7 @@ import React, { Fragment, useEffect, useState } from 'react';
 import { Container, Row } from 'react-bootstrap';
 import BigImage from './sections/BigImage';
 import CastCard from './sections/CastCard';
+import MovieInfo from './sections/MovieInfo';
 
 export const MovieDetailPage = (props) => {
   const [movie, setMovie] = useState({});
@@ -27,7 +28,15 @@ export const MovieDetailPage = (props) => {
   return (
     <Fragment>
       {movie && <BigImage image={movie.backdrop_path} title={movie.title} tagline={movie.tagline} />}
-
+      {movie && (
+        <MovieInfo
+          description={movie.overview}
+          release={movie.release_date}
+          runtime={movie.runtime}
+          score={movie.vote_average}
+          votes={movie.vote_count}
+        />
+      )}
       <h1>Cast</h1>
 
       <Container fluid>
@@ -40,6 +49,7 @@ export const MovieDetailPage = (props) => {
                   <CastCard
                     image={`https://image.tmdb.org/t/p/w500${actor.profile_path}`}
                     name={actor.name}
+                    character={actor.character}
                   />
                 </Fragment>
               ))}
