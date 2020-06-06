@@ -3,6 +3,7 @@ import { Container, Row } from 'react-bootstrap';
 import BigImage from './sections/BigImage';
 import CastCard from './sections/CastCard';
 import MovieInfo from './sections/MovieInfo';
+import Favorite from './sections/Favorite'
 
 export const MovieDetailPage = (props) => {
   const [movie, setMovie] = useState({});
@@ -37,6 +38,7 @@ export const MovieDetailPage = (props) => {
           votes={movie.vote_count}
         />
       )}
+      <Favorite />
       <h1>Cast</h1>
 
       <Container fluid>

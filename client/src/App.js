@@ -32,6 +32,7 @@ const App = () => {
           <Route exact path="/" component={Landing} />
           <AlertMessage />
           <Switch>
+
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />
             <PrivateRoute exact path="/main" component={MainPage} />
