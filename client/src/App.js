@@ -12,6 +12,7 @@ import setAuthToken from './utils/setAuthToken';
 import MainPage from './components/main/MainPage';
 import MovieDetailPage from './components/MovieDetailPage/MovieDetailPage';
 import Dashboard from './components/dashboard/Dashboard';
+import FavoritesPage from './components/FavoritesPage/FavoritesPage'
 import PrivateRoute from './components/routing/PrivateRoute';
 import './App.css';
 
@@ -38,7 +39,7 @@ const App = () => {
             <PrivateRoute exact path="/main" component={MainPage} />
             <PrivateRoute exact path="/dashboard" component={Dashboard} />
             <PrivateRoute exact path="/movies/:movieId" component={MovieDetailPage} />
-            <PrivateRoute exact path="/favorites/:userId" component={null} />
+            <PrivateRoute exact path="/favorites" component={FavoritesPage} />
           </Switch>
         </Fragment>
       </Router>

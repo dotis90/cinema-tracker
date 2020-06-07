@@ -60,7 +60,7 @@ exports.removeFromFavorites = (req, res) => {
 // Get all movies in favorite list
 
 exports.getAllFavorites = (req, res) => {
-    Favorite.find({ 'userFrom': req.user })
+    Favorite.find({ 'userFrom': req.user.id })
         .exec((err, favorites) => {
             if (err) return res.status(400).send(err)
             return res.status(200).json({ success: true, favorites })
