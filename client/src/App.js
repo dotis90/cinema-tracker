@@ -38,6 +38,7 @@ const App = () => {
             <PrivateRoute exact path="/main" component={MainPage} />
             <PrivateRoute exact path="/dashboard" component={Dashboard} />
             <PrivateRoute exact path="/movies/:movieId" component={MovieDetailPage} />
+            <PrivateRoute exact path="/favorites/:userId" component={null} />
           </Switch>
         </Fragment>
       </Router>

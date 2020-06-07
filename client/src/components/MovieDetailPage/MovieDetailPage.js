@@ -38,7 +38,7 @@ export const MovieDetailPage = (props) => {
           votes={movie.vote_count}
         />
       )}
-      <Favorite />
+      <Favorite movieId={props.match.params.movieId} movieTitle={movie.title} movieRunTime={movie.runtime} />
       <h1>Cast</h1>
 
       <Container fluid>

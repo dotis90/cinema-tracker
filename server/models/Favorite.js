@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const FavoriteSchema = new mongoose.Schema({
     userFrom: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'user'
+        ref: 'User'
     },
     movieId: {
         type: String,

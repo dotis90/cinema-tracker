@@ -15,7 +15,7 @@ exports.getFavoriteNumber = (req, res) => {
 
 exports.checkIfFavorite = (req, res) => {
 
-    Favorite.find({ 'movieId': req.body.movieId, 'userFrom': req.user })
+    Favorite.find({ 'movieId': req.body.movieId, 'userFrom': req.user.id })
         .exec((err, favorite) => {
             if (err) return res.status(400).send(err)
 
@@ -33,7 +33,10 @@ exports.checkIfFavorite = (req, res) => {
 
 exports.addToFavorites = (req, res) => {
 
-    const favorite = new Favorite(req.body)
+    const payload = req.body
+    payload.userFrom = req.user.id
+
+    const favorite = new Favorite(payload)
 
     favorite.save((err, doc) => {
         if (err) return res.json({ success: false, err })
@@ -46,7 +49,7 @@ exports.addToFavorites = (req, res) => {
 
 exports.removeFromFavorites = (req, res) => {
 
-    Favorite.findOneAndDelete({ 'movieId': req.body.movieId, 'userFrom': req.user })
+    Favorite.findOneAndDelete({ 'movieId': req.body.movieId, 'userFrom': req.user.id })
         .exec((err, doc) => {
             if (err) return res.status(400).json({ success: false, err })
             res.status(200).json({ success: true, doc })
