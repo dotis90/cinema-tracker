@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
+import Button from 'react-bootstrap/Button'
 
 const FavoritesPage = () => {
     let [favoriteMovies, setFavoriteMovies] = useState([])
@@ -39,14 +40,15 @@ const FavoritesPage = () => {
             <tr key={index}>
                 <td><Link to={`/movies/${movie.movieId}`}>{movie.movieTitle}</Link></td>
                 <td>{movie.movieRunTime} minutes</td>
-                <td><button onClick={() => onClickRemove(movie.movieId)}>Remove</button></td>
+                <td><Button variant="danger" style={{ width: '100%' }} onClick={() => onClickRemove(movie.movieId)}>Remove</Button></td>
             </tr>
         )
     })
 
 
     return (
-        <div style={{ width: '85%', margin: '3rem auto' }}>
+        <div style={{ width: '85%', height: '80vh', margin: '3rem auto' }}>
+
             <h1>Your Favorite Movies</h1>
 
             <table>

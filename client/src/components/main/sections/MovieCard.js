@@ -7,7 +7,7 @@ import Button from 'react-bootstrap/Button';
 export const MovieCard = (props) => {
   return (
     <Col>
-      <Card style={{ width: '18rem', flex: 1 }}>
+      <Card style={{ width: '18rem', flex: 1, margin: '5%' }}>
         <Card.Img variant="top" src={props.image} />
         <Card.Body>
           <Card.Title>{props.title}</Card.Title>

@@ -34,63 +34,65 @@ export const Register = ({ setAlert, register, isAuthenticated }) => {
 
   return (
     <Fragment>
-      <h1>Sign Up</h1>
-      <Form onSubmit={(e) => onSubmit(e)}>
-        <Form.Group controlId="formBasicName">
-          <Form.Label>Name</Form.Label>
-          <Form.Control
-            type="text"
-            name="name"
-            value={name}
-            onChange={(e) => onChange(e)}
-            placeholder="Enter Name"
+      <div className="form">
+        <h1>Sign Up</h1>
+        <Form onSubmit={(e) => onSubmit(e)}>
+          <Form.Group controlId="formBasicName">
+            <Form.Label>Name</Form.Label>
+            <Form.Control
+              type="text"
+              name="name"
+              value={name}
+              onChange={(e) => onChange(e)}
+              placeholder="Enter Name"
             // required
-          />
-        </Form.Group>
+            />
+          </Form.Group>
 
-        <Form.Group controlId="formBasicEmail">
-          <Form.Label>Email address</Form.Label>
-          <Form.Control
-            type="email"
-            name="email"
-            value={email}
-            onChange={(e) => onChange(e)}
-            placeholder="Enter email"
-          />
-          <Form.Text className="text-muted">We'll never share your email with anyone else.</Form.Text>
-        </Form.Group>
+          <Form.Group controlId="formBasicEmail">
+            <Form.Label>Email address</Form.Label>
+            <Form.Control
+              type="email"
+              name="email"
+              value={email}
+              onChange={(e) => onChange(e)}
+              placeholder="Enter email"
+            />
+            <Form.Text className="text-muted">We'll never share your email with anyone else.</Form.Text>
+          </Form.Group>
 
-        <Form.Group controlId="formBasicPassword">
-          <Form.Label>Password</Form.Label>
-          <Form.Control
-            type="password"
-            name="password"
-            value={password}
-            onChange={(e) => onChange(e)}
-            placeholder="Password"
+          <Form.Group controlId="formBasicPassword">
+            <Form.Label>Password</Form.Label>
+            <Form.Control
+              type="password"
+              name="password"
+              value={password}
+              onChange={(e) => onChange(e)}
+              placeholder="Password"
             // minLength="8"
-          />
-        </Form.Group>
+            />
+          </Form.Group>
 
-        <Form.Group controlId="formBasicPassword2">
-          <Form.Label>Re-enter Password</Form.Label>
-          <Form.Control
-            type="password"
-            name="password2"
-            value={password2}
-            onChange={(e) => onChange(e)}
-            placeholder="Password"
+          <Form.Group controlId="formBasicPassword2">
+            <Form.Label>Re-enter Password</Form.Label>
+            <Form.Control
+              type="password"
+              name="password2"
+              value={password2}
+              onChange={(e) => onChange(e)}
+              placeholder="Password"
             // minLength="8"
-          />
-        </Form.Group>
+            />
+          </Form.Group>
 
-        <Button variant="primary" type="submit">
-          Submit
+          <Button variant="primary" type="submit">
+            Submit
         </Button>
-      </Form>
-      <p>
-        Already have an account?<Link to="/login"> Login Here</Link>
-      </p>
+        </Form>
+        <p>
+          Already have an account?<Link to="/login"> Login Here</Link>
+        </p>
+      </div>
     </Fragment>
   );
 };

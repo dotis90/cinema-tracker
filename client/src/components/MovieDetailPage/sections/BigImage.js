@@ -13,6 +13,8 @@ export const BigImage = (props) => {
     left: '50%',
     transform: 'translate(-50%, -50%)',
     color: 'white',
+    textAlign: 'center',
+    backgroundColor: 'rgba(0,0,0,0.5)'
   };
 
   const taglineStyle = {
@@ -21,6 +23,7 @@ export const BigImage = (props) => {
     left: '50%',
     transform: 'translate(-50%, -50%)',
     color: 'white',
+    backgroundColor: 'rgba(0,0,0,0.5)'
   };
 
   return (

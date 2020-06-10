@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import './favorite.css'
+import Button from 'react-bootstrap/Button'
 
 const Favorite = (props) => {
 
@@ -60,7 +60,11 @@ const Favorite = (props) => {
     }
 
     return (
-        <button onClick={onClickFavorite} className={favorited ? 'favorited' : 'notFavorited'}>{favorited ? 'Added to Favorites ' : 'Add to Favorites '}{favoriteNumber}</button>
+
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
+            <Button className="favButton" onClick={onClickFavorite} variant={favorited ? 'success' : 'danger'}>{favorited ? 'Added to Favorites ' : 'Add to Favorites '}{favoriteNumber}</Button>
+        </div>
+
     )
 }
 
