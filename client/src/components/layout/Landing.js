@@ -16,7 +16,7 @@ export const Landing = ({ isAuthenticated }) => {
         <div>
           <h1>Cinema Tracker</h1>
           <p>Browse today's most popular movies and save them to your Favorites list.</p>
-          <Link class="btn" to="/Register">Sign up</Link>
+          <Link class="button" to="/Register">Sign up</Link>
         </div>
         <IconContext.Provider value={{ size: '32rem' }}>
           <FaFilm />
