@@ -3,6 +3,8 @@ const express = require('express');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 
+dotenv.config({ path: './config.env' });
+
 const app = express();
 
 app.use(express.json({ limit: '10kb' }));
@@ -39,10 +41,6 @@ if (process.env.NODE_ENV === 'production') {
     res.sendFile(path.resolve(__dirname, '../client', 'build', 'index.html'));
   });
 }
-
-dotenv.config({ path: './config.env' });
-
-const app = require('./app');
 
 const port = process.env.PORT || 5000;
 
