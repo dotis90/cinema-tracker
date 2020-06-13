@@ -3,7 +3,7 @@ import { Container, Row } from 'react-bootstrap';
 import BigImage from './sections/BigImage';
 import CastCard from './sections/CastCard';
 import MovieInfo from './sections/MovieInfo';
-import Favorite from './sections/Favorite'
+import Favorite from './sections/Favorite';
 
 export const MovieDetailPage = (props) => {
   const [movie, setMovie] = useState({});
@@ -40,7 +40,12 @@ export const MovieDetailPage = (props) => {
           />
         )}
 
-        <Favorite movieId={props.match.params.movieId} movieTitle={movie.title} movieRunTime={movie.runtime} />
+        {console.log(props.match.params.movieId)}
+        <Favorite
+          movieId={props.match.params.movieId}
+          movieTitle={movie.title}
+          movieRunTime={movie.runtime}
+        />
         <h1>Cast</h1>
 
         <Container fluid>
@@ -61,7 +66,6 @@ export const MovieDetailPage = (props) => {
         </Container>
       </div>
     </Fragment>
-
   );
 };
 
