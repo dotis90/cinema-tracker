@@ -35,6 +35,7 @@ const Favorite = (props) => {
     }, [])
 
     const onClickFavorite = () => {
+        console.log('clicked')
         if (favorited) {
             axios.post('/api/favorite/remove', payload)
                 .then(res => {
